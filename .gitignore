@@ -1,0 +1,12 @@
+**/target/
+/messages/
+**/log/
+/.idea/
+*.iml
+**/dependency-reduced-pom.xml
+*.prefs
+*.project
+*.settings
+*.classpath
+poppin-feeds/messages/
+**/test-output/
