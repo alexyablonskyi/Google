@@ -1,4 +1,5 @@
 **/target/
+**/test-output/
 /messages/
 **/log/
 /.idea/
@@ -8,5 +9,4 @@
 *.project
 *.settings
 *.classpath
-poppin-feeds/messages/
-**/test-output/
+
