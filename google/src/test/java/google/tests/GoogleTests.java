@@ -26,7 +26,7 @@ public class GoogleTests extends Base {
 	}
 
 	
-	@Test(enabled= false, priority=1, groups = {"Google tests"}, description= "Check that there is a possibility to add link to email")
+	@Test(enabled= true, priority=1, groups = {"Google tests"}, description= "Check that there is a possibility to add link to email")
 	public void includeLinkToEmail() throws Exception{
 		loginPage = new GmailPage(driver);
         loginPage.loginToTestEmailAccount(Global.GMAIL_EMAIL, Global.GMAIL_PASSWORD); 
