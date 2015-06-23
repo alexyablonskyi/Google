@@ -11,10 +11,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class GmailPage {
+public class LoginPage {
 	WebDriver driver;
 	
-	public GmailPage(WebDriver driver){
+	public LoginPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -113,7 +113,7 @@ public class GmailPage {
      * Add attach file via Robot class
      */
     public void addAttachmentFileToEmail() throws Exception{
-	    StringSelection ss = new StringSelection("C:\\Users\\oyablonskyi\\workspace\\google\\attach.zip");
+	    StringSelection ss = new StringSelection("E:\\Autotest\\workspace\\google\\attach.rar");
 	    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 	
 	    Robot robot = new Robot();
@@ -121,7 +121,7 @@ public class GmailPage {
 	    robot.keyPress(KeyEvent.VK_V);
 	    robot.keyRelease(KeyEvent.VK_V);
 	    robot.keyRelease(KeyEvent.VK_CONTROL);
-	    Thread.sleep(4000);
+	    Thread.sleep(2000);
 	    robot.keyPress(KeyEvent.VK_ENTER); 
 	    robot.keyRelease(KeyEvent.VK_ENTER); 
     }
@@ -171,8 +171,15 @@ public class GmailPage {
     /*
      * Open sent email
      */
+    @FindBy(xpath = ".//span[contains(text(), 'Automation test 714587345')]") 
+    WebElement openSentEmailLink;
+    
+    public String getEmailXpath(){
+    	return ".//span[contains(text(), 'Automation test "+randomNumbers+"')]";
+    }
+    
     public void openSentEmail(){
-    	driver.findElement(By.xpath(".//span[contains(text(), 'Automation test "+randomNumbers+"')]")).click();
+    	driver.findElement(By.xpath(getEmailXpath())).click();
     }
     
     /*
